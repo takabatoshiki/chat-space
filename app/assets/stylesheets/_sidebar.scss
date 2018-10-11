@@ -1,0 +1,43 @@
+.sidebar{
+  .header{
+    height: $headerHeight;
+    background-color: $darkCyanBlue;
+    padding: 0 20px;
+    line-height: $headerHeight;
+    .name{
+      font-size: 16px;
+      font-weight: bold;
+      color: $white;
+      display: inline-block;
+    }
+    .nav{
+      display: inline-block;
+      float: right;
+      &__list{
+        display: inline-block;
+        .icon{
+          color: $white;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .contents{
+    background-color: $middleCyanBlue;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group{
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name{
+        font-size: 15px;
+        color: $white;
+      }
+      &__message{
+        margin-top: 5px;
+        font-size: 11px;
+        color: $white;
+      }
+    }
+  }
+}
