@@ -3,7 +3,8 @@
 .wrapper
   .sidebar
     .header
-      %p.name takaba
+      %p.name
+        = current_user.name
       %ul.nav
         %li.nav__list
           = link_to do
