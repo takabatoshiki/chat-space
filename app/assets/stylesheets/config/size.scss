@@ -1,5 +1,8 @@
 // notification
 $notificationHeight: 24px;
 
-//
+// sidebar_header
 $headerHeight: 100px;
+
+// sidebar_contents
+$contentsHeight: calc(100vh - #{$headerHeight});
