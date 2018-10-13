@@ -26,8 +26,8 @@
       border: 1px solid $clearBlue;
       color: $clearBlue;
       float: right;
-      height: 40px;
-      line-height: 40px;
+      height: $right-headerHeight;
+      line-height: $right-headerHeight;
       margin-top: 28px;
       padding: 0 20px;
       &__button{
@@ -38,10 +38,10 @@
   }
 
   .contents{
-    background-color: #FAFAFA;
-    border-top: 1px $lightGray;
+    background-color: $paleGray;
+    border-top: 1px $lightGray_e;
     padding: 46px 40px 0;
-    height: calc(100vh - 100px - 90px);
+    height: $mainContentsHeight;
     box-sizing: border-box;
     overflow: scroll;
     .message{
@@ -52,7 +52,7 @@
         .name{
           font-size: 16px;
           font-weight: bold;
-          color: $middleGray;
+          color: $darkBlue;
         }
         .date{
           padding-left: 10px;
@@ -71,35 +71,35 @@
     }
   }
   .form{
-    background-color: #DDDDDD;
-    height: 90px;
+    background-color: $lightGray_d;
+    height: $formHeight;
     padding: 20px 40px 20px 40px;
     box-sizing: border-box;
     &__message{
       box-sizing: border-box;
-      height: 50px;
+      height: $form_innerHeight;
       padding: 0 10px;
       width: calc(100% - 150px);
       font-size: 16px;
-      color: #434A54;
+      color: $darkBlue;
       border: none;
       float: left;
     }
     &__upload{
       background-color: $white;
       padding-right: 10px;
-      height: 50px;
+      height: $form_innerHeight;
       float: left;
       .upload-label{
         font-size: 20px;
-        line-height: 50px;
+        line-height: $form_innerHeight;
       }
     }
     &__submit{
       font-size: 16px;
       background-color: $clearBlue;
       color: $white;
-      height: 50px;
+      height: $form_innerHeight;
       padding: 0 30px;
       border: none;
       margin-left: 15px;
