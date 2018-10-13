@@ -38,8 +38,8 @@
   }
 
   .contents{
-    background-color: #FAFAFA;
-    border-top: 1px $lightGray;
+    background-color: $paleGray;
+    border-top: 1px $lightGray_e;
     padding: 46px 40px 0;
     height: calc(100vh - 100px - 90px);
     box-sizing: border-box;
@@ -52,7 +52,7 @@
         .name{
           font-size: 16px;
           font-weight: bold;
-          color: $middleGray;
+          color: $darkBlue;
         }
         .date{
           padding-left: 10px;
@@ -71,7 +71,7 @@
     }
   }
   .form{
-    background-color: #DDDDDD;
+    background-color: $lightGray_d;
     height: 90px;
     padding: 20px 40px 20px 40px;
     box-sizing: border-box;
