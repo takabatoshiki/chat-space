@@ -60,11 +60,11 @@ Things you may want to cover:
 - has_many :members
 - has_many :users, through: :members
 
-## members table
+## group_users table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|integer|foreign_key: true|
+|group|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
