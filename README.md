@@ -35,16 +35,16 @@ Things you may want to cover:
 
 ### Association
 - has_many :messages
-- has_many :members
-- has_many :groups, through: :members
+- has_many :group_users
+- has_many :groups, through: :group_users
 
 ## messages table
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
 |image|string||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|integer|foreign_key: true|
+|group|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -53,18 +53,18 @@ Things you may want to cover:
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true, unique: true|
 
 ### Association
 - has_many :messages
-- has_many :members
-- has_many :users, through: :members
+- has_many :group_users
+- has_many :users, through: :group_users
 
-## members table
+## group_users table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|integer|foreign_key: true|
+|group|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
