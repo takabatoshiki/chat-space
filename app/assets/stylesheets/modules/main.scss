@@ -26,8 +26,8 @@
       border: 1px solid $clearBlue;
       color: $clearBlue;
       float: right;
-      height: 40px;
-      line-height: 40px;
+      height: $right-headerHeight;
+      line-height: $right-headerHeight;
       margin-top: 28px;
       padding: 0 20px;
       &__button{
@@ -41,7 +41,7 @@
     background-color: $paleGray;
     border-top: 1px $lightGray_e;
     padding: 46px 40px 0;
-    height: calc(100vh - 100px - 90px);
+    height: $mainContentsHeight;
     box-sizing: border-box;
     overflow: scroll;
     .message{
@@ -72,12 +72,12 @@
   }
   .form{
     background-color: $lightGray_d;
-    height: 90px;
+    height: $formHeight;
     padding: 20px 40px 20px 40px;
     box-sizing: border-box;
     &__message{
       box-sizing: border-box;
-      height: 50px;
+      height: $form_innerHeight;
       padding: 0 10px;
       width: calc(100% - 150px);
       font-size: 16px;
@@ -88,18 +88,18 @@
     &__upload{
       background-color: $white;
       padding-right: 10px;
-      height: 50px;
+      height: $form_innerHeight;
       float: left;
       .upload-label{
         font-size: 20px;
-        line-height: 50px;
+        line-height: $form_innerHeight;
       }
     }
     &__submit{
       font-size: 16px;
       background-color: $clearBlue;
       color: $white;
-      height: 50px;
+      height: $form_innerHeight;
       padding: 0 30px;
       border: none;
       margin-left: 15px;
