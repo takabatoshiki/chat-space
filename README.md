@@ -43,8 +43,8 @@ Things you may want to cover:
 |------|----|-------|
 |body|text||
 |image|string||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|integer|foreign_key: true|
+|group|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
