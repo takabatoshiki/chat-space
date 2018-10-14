@@ -11,10 +11,9 @@
           = fa_icon 'cog', class: 'icon'
   .contents
     .group
-      %a{:href => "#"}
-        %p.group__name takaba
-        %p.group__message a long time no see
-    .group
-      %a{:href => "#"}
-        %p.group__name takaba2
-        %p.group__message Hello world!
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
