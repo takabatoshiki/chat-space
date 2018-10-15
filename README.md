@@ -41,10 +41,10 @@ Things you may want to cover:
 ## messages table
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|string||
 |image|string||
-|user|integer|foreign_key: true|
-|group|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -63,8 +63,8 @@ Things you may want to cover:
 ## group_users table
 |Column|Type|Options|
 |------|----|-------|
-|user|integer|foreign_key: true|
-|group|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
