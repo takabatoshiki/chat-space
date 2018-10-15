@@ -1,13 +1,13 @@
 .sidebar{
+  color: $white;
   .header{
     height: $headerHeight;
     background-color: $darkCyanBlue;
     padding: 0 20px;
     line-height: $headerHeight;
     .name{
-      font-size: 16px;
+      font-size: $side_header_font;
       font-weight: bold;
-      color: $white;
       display: inline-block;
     }
     .nav{
@@ -17,7 +17,7 @@
         display: inline-block;
         .icon{
           color: $white;
-          font-size: 16px;
+          font-size: $side_header_font;
         }
       }
     }
@@ -30,12 +30,12 @@
       box-sizing: border-box;
       padding: 20px 0 40px;
       &__name{
-        font-size: 15px;
+        font-size: $side_group_name;
         color: $white;
       }
       &__message{
         margin-top: 5px;
-        font-size: 11px;
+        font-size: $side_group_message;
         color: $white;
       }
     }
