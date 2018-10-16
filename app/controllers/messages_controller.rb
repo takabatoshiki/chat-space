@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
-      render :edit
+      render :index
     end
   end
 
