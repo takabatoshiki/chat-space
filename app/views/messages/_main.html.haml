@@ -9,18 +9,7 @@
       %a.right-header__button{:href => "#"}
         Edit
   .contents
-    .message
-      .message__info
-        %p.name takaba
-        %p.date 2016/10/02 06:27:07
-      .message__content
-        %p.description なるほど
-    .message
-      .message__info
-        %p.name satoh
-        %p.date 2016/10/02 06:27:07
-      .message__content
-        %p.description command Enterで送信したい感がある
+    = render @messages
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
