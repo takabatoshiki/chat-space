@@ -31,7 +31,7 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.contents').append(html);
+      $('.main_contents').append(html);
       $('.form__message').val('');
     });
   });
