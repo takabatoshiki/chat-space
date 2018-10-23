@@ -33,6 +33,7 @@ $(function(){
       var html = buildHTML(data);
       $('.main_contents').append(html);
       $('.form__message').val('');
+      $('.form__submit').prop('disabled', false);
     });
   });
 });
