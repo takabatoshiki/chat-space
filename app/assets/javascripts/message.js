@@ -33,12 +33,10 @@ $(function(){
       var html = buildHTML(data);
       $('.main_contents').append(html);
       $('.form__message').val('');
+      $('.form__submit').prop("disabled", false);
     })
     .fail(function(){
       alert("メッセージの送信に失敗しました");
-    })
-    .always(function(){
-      $(".form__submit").removeAttr("disabled");
     });
   });
 });
