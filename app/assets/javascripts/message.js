@@ -17,6 +17,10 @@ $(function(){
     return html;
   }
 
+  function scroll(){
+    $('.main_contents').animate({ scrollTop: $('.main_contents')[0].scrollHeight});
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -34,6 +38,7 @@ $(function(){
       $('.main_contents').append(html);
       $('.form__message').val('');
       $('.form__submit').prop("disabled", false);
+      scroll();
     })
     .fail(function(){
       alert("メッセージの送信に失敗しました");
