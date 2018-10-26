@@ -9,7 +9,7 @@
           %li.member
             = user.name
     .right-header
-      %a.right-header__button{:href => "#"}
+      %a.right-header__button{:href => edit_group_path(@group)}
         Edit
   .main_contents
     = render @messages
