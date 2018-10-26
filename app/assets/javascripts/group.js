@@ -35,4 +35,11 @@ $(function() {
       alert('ユーザー検索に失敗しました');
     })
   });
+
+  $('#user-search-result').on('click', '.user-search-add',function(){
+    var user_id = $('.chat-group-user__btn--add').attr('data-user-id');
+    var user_add = $('.chat-group-user__btn--add').attr('data-user-name');
+    console.log(user_id);
+    console.log(user_add);
+  });
 });
