@@ -48,5 +48,6 @@ $(function() {
     var user_id = $(this).attr('data-user-id');
     var user_name = $(this).attr('data-user-name');
     appendGroupUser(user_id, user_name);
+    $(this).parent().remove();
   });
 });
