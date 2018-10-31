@@ -32,7 +32,14 @@ $(function(){
         data: { id: messageId }
       })
       .done(function(data){
-
+        var id = $('.message').data('messageId');
+        var insertHTML = "";
+        data.forEach(function(message){
+          if (message.id > id){
+            insertHTML += buildHTML(message);
+          }
+          scroll();
+        });
       })
       .fail(function() {
         alert("自動更新に失敗しました");
