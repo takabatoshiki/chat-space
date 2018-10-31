@@ -38,8 +38,9 @@ $(function(){
           if (message.id > id){
             insertHTML += buildHTML(message);
           }
-          scroll();
         });
+        $('.main_contents').append(insertHTML);
+        scroll();
       })
       .fail(function() {
         alert("自動更新に失敗しました");
