@@ -23,6 +23,22 @@ $(function(){
 
   setInterval(autoUpdate, 5000);
 
+  function autoUpdate(){
+    if (location.href.match(/\/groups\/\d+\/messages/)) {
+
+      $.ajax({
+        url: location.href,
+        dataType: 'json',
+      })
+      .done(function(data){
+
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました");
+      })
+    }
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
