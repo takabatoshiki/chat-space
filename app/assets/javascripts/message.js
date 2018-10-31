@@ -21,6 +21,8 @@ $(function(){
     $('.main_contents').animate({ scrollTop: $('.main_contents')[0].scrollHeight});
   }
 
+  setInterval(autoUpdate, 5000);
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
