@@ -21,7 +21,7 @@ $(function(){
     $('.main_contents').animate({ scrollTop: $('.main_contents')[0].scrollHeight});
   }
 
-  setInterval(autoUpdate, 5000);
+  var interval = setInterval(autoUpdate, 5000);
 
   function autoUpdate(){
     if (location.href.match(/\/groups\/\d+\/messages/)) {
@@ -35,6 +35,7 @@ $(function(){
       })
       .fail(function() {
         alert("自動更新に失敗しました");
+        clearInterval(interval);
       })
     }
   }
