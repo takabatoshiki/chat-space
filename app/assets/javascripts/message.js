@@ -25,7 +25,7 @@ $(function(){
 
   function autoUpdate(){
     if (location.href.match(/\/groups\/\d+\/messages/)) {
-       var messageId = $(".message").last().attr('data-message-id');
+      var messageId = $(".message").last().attr('data-message-id');
       $.ajax({
         url: location.href,
         dataType: 'json',
@@ -35,9 +35,7 @@ $(function(){
         var id = $('.message').data('messageId');
         var insertHTML = "";
         data.forEach(function(message){
-          if (message.id > id){
-            insertHTML += buildHTML(message);
-          }
+          insertHTML += buildHTML(message);
         });
         $('.main_contents').append(insertHTML);
         scroll();
