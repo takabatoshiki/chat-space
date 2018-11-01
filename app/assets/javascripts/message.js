@@ -4,7 +4,7 @@ $(function(){
     if (message.image) {
       showImage = `<img src="${message.image}" class="message__content__image">`
     }
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="message__info">
                     <p class="name">${message.name}</p>
                     <p class="date">${message.date}</p>
@@ -19,6 +19,32 @@ $(function(){
 
   function scroll(){
     $('.main_contents').animate({ scrollTop: $('.main_contents')[0].scrollHeight});
+  }
+
+  var interval = setInterval(autoUpdate, 5000);
+
+  function autoUpdate(){
+    if (location.href.match(/\/groups\/\d+\/messages/)) {
+      var messageId = $(".message").last().attr('data-message-id');
+      $.ajax({
+        url: location.href,
+        dataType: 'json',
+        data: { id: messageId }
+      })
+      .done(function(data){
+        var id = $('.message').data('messageId');
+        var insertHTML = "";
+        data.forEach(function(message){
+          insertHTML += buildHTML(message);
+        });
+        $('.main_contents').append(insertHTML);
+        scroll();
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました");
+        clearInterval(interval);
+      })
+    }
   }
 
   $('#new_message').on('submit', function(e){
