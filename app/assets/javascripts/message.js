@@ -25,7 +25,7 @@ $(function(){
 
   function autoUpdate(){
     if (location.href.match(/\/groups\/\d+\/messages/)) {
-      var messageId = $(".message").last().attr('data-message-id');
+      var messageId = $(".message:last").data('id');
       $.ajax({
         url: location.href,
         dataType: 'json',
