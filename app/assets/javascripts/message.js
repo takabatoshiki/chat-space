@@ -25,7 +25,7 @@ $(function(){
 
   function autoUpdate(){
     if (location.href.match(/\/groups\/\d+\/messages/)) {
-      var messageId = $(".message:last").data('id');
+      var messageId = $(".message").last().attr('data-message-id');
       $.ajax({
         url: location.href,
         dataType: 'json',
@@ -51,6 +51,10 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
+    if ($('.form__message').val() == ""){
+      alert("コメントを入力してください");
+      return false;
+    }
     $.ajax({
       url: url,
       type: "POST",
@@ -62,9 +66,9 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.main_contents').append(html);
-      $('.form__message').val('');
       $('.form__submit').prop("disabled", false);
       scroll();
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert("メッセージの送信に失敗しました");
