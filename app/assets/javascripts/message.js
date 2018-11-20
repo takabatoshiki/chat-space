@@ -37,8 +37,10 @@ $(function(){
         data.forEach(function(message){
           insertHTML += buildHTML(message);
         });
-        $('.main_contents').append(insertHTML);
-        scroll();
+        if (insertHTML !== ""){
+          $('.main_contents').append(insertHTML);
+          scroll();
+        }
       })
       .fail(function() {
         alert("自動更新に失敗しました");
