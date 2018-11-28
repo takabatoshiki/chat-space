@@ -35,12 +35,12 @@ $(function(){
         var id = $('.message').data('messageId');
         var insertHTML = "";
         data.forEach(function(message){
-          insertHTML += buildHTML(message);
+          if (message.id > id){
+            insertHTML += buildHTML(message);
+          }
         });
-        if (insertHTML !== ""){
-          $('.main_contents').append(insertHTML);
-          scroll();
-        }
+        $('.main_contents').append(insertHTML);
+        scroll();
       })
       .fail(function() {
         alert("自動更新に失敗しました");
